@@ -1,0 +1,94 @@
+ion-content{
+    --ion-background-color: rgb(245, 245, 245);
+}
+
+.slides {
+    margin-bottom: 50px;
+}
+
+.slide {
+    height: 270px;
+    width: 192px;
+    border-radius: 24px;
+    color: white;
+    background-color: rgb(183, 136, 66);
+}
+
+.slide-selected {
+    background-color: rgb(73 183 66);
+    background-image: radial-gradient(circle farthest-corner at 100% 20%, #61BF5A 75%, transparent 25%);
+}
+
+.default-font {
+    font-family: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
+    text-align: left;
+}
+
+.section-title {
+    color: rgb(102, 102, 102);
+    font-size: 18px;
+    margin-bottom: 22px;
+    font-weight: bold;
+}
+
+.card-header {
+    position: relative;
+    top: 0;
+    padding: 24px;
+}
+
+.card-footer {
+    position: relative;
+    bottom: 0;
+    padding: 24px;
+}
+
+.card-number {
+    float: right;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.card-bank-logo {
+    height: 30px;
+    width: 30px;
+    float: left;
+}
+
+.card-amounts {
+    margin-top: 69px;
+}
+
+.amount {
+    font-size: 19px;
+    text-align: center;
+}
+
+.transaction-icon {
+    background-color: rgba(211, 18, 69, 0.05);
+    padding: 7px;
+    border-radius: 8px;
+}
+
+.green-icon {
+    color: rgb(183, 136, 66);
+}
+
+.red-icon {
+    color: var(--ion-color-danger);
+}
+
+.transaction-title {
+    font-size: 14px;
+    color: rgb(102, 102, 102);
+}
+
+.transaction-date {
+    font-size: 10px;
+    color: rgba(204, 204, 204, 0.6);
+}
+
+.transaction-amount {
+    font-weight: bold;
+    font-size: 14px;
+}

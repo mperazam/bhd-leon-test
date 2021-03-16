@@ -1,0 +1,7 @@
+{
+  "name": "bhdTechnicalTest",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
