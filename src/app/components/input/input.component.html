@@ -1,0 +1,5 @@
+<form class="form" [formGroup]="parentForm">
+  <ion-input placeholder="{{placeholder}}" class="input default-font" [formControlName]="controlName"
+    type="{{inputType}}" [class.error-input]="!parentForm.value[controlName] && !parentForm.controls[controlName].pristine"></ion-input>
+  <p class="error-msg default-font" *ngIf="!parentForm.value[controlName] && !parentForm.controls[controlName].pristine">{{requiredMsg}}</p>
+</form>

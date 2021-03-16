@@ -1,0 +1,45 @@
+<ion-header>
+  <app-header title="Mis productos"></app-header>
+</ion-header>
+<ion-content>
+  <h1 class="section-title default-font ion-margin-start">Mis Tarjetas</h1>
+  <ion-slides [options]="slideOpts" class="slides">
+    <ion-slide *ngFor="let card of cards" (click)="updateSelectedCard(card)">
+      <div class="slide" [class.slide-selected]="card.productNumber === selectedCard.productNumber">
+        <div class="card-header">
+          <img src="../../../assets/imagotipo_white.svg" class="card-bank-logo" />
+          <span class="default-font card-number">{{getCardDisplayNumber(card.productNumber)}}</span>
+        </div>
+        <div class="card-amounts">
+          <h2 class="amount default-font">RD {{formatCurrency(card.BalanceRD)}}</h2>
+          <h2 class="amount default-font">US {{formatCurrency(card.BalanceUS)}}</h2>
+        </div>
+        <div class="card-footer">
+          <img src="{{getCardIssuerLogo(card.productBrand)}}" class="card-bank-logo" />
+        </div>
+      </div>
+    </ion-slide>
+  </ion-slides>
+  <h1 class="section-title default-font ion-margin-start" style="margin-bottom: 18px;">Transacciones</h1>
+  <ion-list lines="none">
+    <ion-item *ngFor="let movement of selectedCardMovements">
+      <ion-icon name="arrow-up-outline" slot="start" class="transaction-icon green-icon"
+        *ngIf="movement.transactionType === 2"></ion-icon>
+      <ion-icon name="arrow-down-outline" slot="start" class="transaction-icon red-icon"
+        *ngIf="movement.transactionType === 1"></ion-icon>
+      <ion-label>
+        <h3 class="transaction-title default-font">{{movement.description}}</h3>
+        <p class="transaction-date default-font">{{formatDate(movement.date)}}</p>
+      </ion-label>
+      <ion-note slot="end" class="transaction-amount default-font" [class.red-icon]="movement.transactionType === 1"
+        [class.green-icon]="movement.transactionType === 2"><span *ngIf="movement.transactionType === 1">-</span><span
+          *ngIf="movement.transactionType === 2">+</span>RD {{formatCurrency(movement.amount)}}</ion-note>
+    </ion-item>
+    <ion-item *ngIf="selectedCardMovements?.length === 0">
+      <ion-icon name="file-tray-outline" slot="start" class="transaction-icon"></ion-icon>
+      <ion-label>
+        <h3 class="transaction-title default-font">Sin movimientos recientes</h3>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

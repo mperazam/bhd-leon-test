@@ -1,0 +1,35 @@
+$default-grey-color: rgba(204, 204, 204, 0.6);
+
+.form {
+    margin-bottom: 24px;
+}
+
+.input {
+    height: 56px;
+    border-radius: 16px;
+    border: 1px solid $default-grey-color;
+    --padding-start: 24px;
+    --padding-end: 24px;
+    --padding-top: 19px;
+    --padding-bottom: 18px;
+    --placeholder-color: $default-grey-color;
+}
+
+.default-font {
+    font-family: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
+    text-align: left;
+}
+
+.error-msg {
+    color: var(--ion-color-danger);
+    font-size: 14px;
+    margin-left: 14px;
+    margin-right: 14px;
+    margin-top: 7px;
+    margin-bottom: 0px;
+}
+
+.error-input {
+    --placeholder-color: var(--ion-color-danger) !important;
+    border: 1px solid var(--ion-color-danger);
+}
